@@ -2,12 +2,12 @@
 
 const Pool = require('pg').Pool;
 
-const pool = new pool({
+const pool = new Pool({
     user: "psharma",
     host: "localhost",
     database: "conversion_rates",
-    password: "Kushboo",
-    posrt: 3000,
+    password: "kushboo",
+    port: 3000,
 });
 
 module.exports = pool;

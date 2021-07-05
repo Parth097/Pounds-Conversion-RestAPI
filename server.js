@@ -9,6 +9,8 @@ app.get("/", (req, res) => {
     res.send("Hello World");
 });
 
+app.use(express.json());
+
 app.use('/api/conversion_rates', conversion_ratesRoutes);
 
 app.listen(port, () => console.log(`app listening on port ${port}`));
