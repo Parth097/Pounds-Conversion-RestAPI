@@ -49,9 +49,29 @@ const deleteCurrencyById = (req, res) =>{
     });
 };
 
+const updateAmount = (req, res) =>{
+    const id = parseInt(req.params.id);
+    const {amount} = req.body;
+
+    pool.query(queries.getConversionRateById, [id], (error, results) => {
+        const noCurrencyFound = !results.rows.length;
+        if(noCurrencyFound) {
+            res.send("ERR: Currency Does Not Exists, Unable To Delete!");
+        }
+
+        pool.query(queries.updateAmount, [amount, id], (error, results)=>{
+            if (error) throw error;
+            res.status(200).send("Amount Updated!");
+        });
+
+    });
+
+};
+
 module.exports = {
     getConversionRates,
     getConversionRateById,
     addCurrency,
     deleteCurrencyById,
+    updateAmount,
 };

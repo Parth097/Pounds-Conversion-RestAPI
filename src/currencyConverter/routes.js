@@ -9,6 +9,7 @@ router.get('/', controller.getConversionRates);
 router.post('/', controller.addCurrency);
 
 router.get('/:id', controller.getConversionRateById);
+router.put('/:id', controller.updateAmount);
 router.delete('/:id', controller.deleteCurrencyById);
 
 module.exports= router;
