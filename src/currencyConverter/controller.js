@@ -10,6 +10,13 @@ const getConversionRates = (req, res) =>{
     });
 };
 
+const updateResult = (req, res) =>{
+    pool.query(queries.updateResult, (error, results) => {
+        if (error) throw error;
+        res.status(200).json(results.rows);
+    });
+};
+
 const getConversionRateById = (req, res) =>{
     const id = parseInt(req.params.id);
     pool.query(queries.getConversionRateById, [id], (error, results) => {
@@ -74,4 +81,5 @@ module.exports = {
     addCurrency,
     deleteCurrencyById,
     updateAmount,
+    updateResult,
 };

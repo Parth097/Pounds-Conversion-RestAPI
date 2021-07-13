@@ -7,6 +7,7 @@ const router = Router();
 
 router.get('/', controller.getConversionRates);
 router.post('/', controller.addCurrency);
+router.get('/result', controller.updateResult);
 
 router.get('/:id', controller.getConversionRateById);
 router.put('/:id', controller.updateAmount);
