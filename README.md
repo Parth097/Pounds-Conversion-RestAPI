@@ -15,7 +15,7 @@ I used visual code IDE, programming in JavaScript.
 
 # How my API works:
 
-There are 4 aspects to the API:
+There are 6 aspects to the API:
 
     - Add currency
     - Delete currency by ID
